@@ -25,8 +25,8 @@ import com.justwayward.reader.bean.support.FindBean;
 import com.justwayward.reader.common.OnRvItemClickListener;
 import com.justwayward.reader.component.AppComponent;
 import com.justwayward.reader.ui.activity.BookDiscussionActivity;
-import com.justwayward.reader.ui.activity.BookReviewActivity;
 import com.justwayward.reader.ui.activity.BookHelpActivity;
+import com.justwayward.reader.ui.activity.BookReviewActivity;
 import com.justwayward.reader.ui.activity.GirlBookDiscussionActivity;
 import com.justwayward.reader.ui.adapter.FindAdapter;
 import com.justwayward.reader.view.SupportDividerItemDecoration;
@@ -34,11 +34,11 @@ import com.justwayward.reader.view.SupportDividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class CommunityFragment extends BaseFragment implements OnRvItemClickListener<FindBean> {
 
-    @Bind(R.id.recyclerview)
+    @BindView(R.id.recyclerview)
     RecyclerView mRecyclerView;
 
     private FindAdapter mAdapter;

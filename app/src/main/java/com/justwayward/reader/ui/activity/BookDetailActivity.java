@@ -61,7 +61,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -76,46 +76,46 @@ public class BookDetailActivity extends BaseActivity implements BookDetailContra
                 .putExtra(INTENT_BOOK_ID, bookId));
     }
 
-    @Bind(R.id.ivBookCover)
+    @BindView(R.id.ivBookCover)
     ImageView mIvBookCover;
-    @Bind(R.id.tvBookListTitle)
+    @BindView(R.id.tvBookListTitle)
     TextView mTvBookTitle;
-    @Bind(R.id.tvBookListAuthor)
+    @BindView(R.id.tvBookListAuthor)
     TextView mTvAuthor;
-    @Bind(R.id.tvCatgory)
+    @BindView(R.id.tvCatgory)
     TextView mTvCatgory;
-    @Bind(R.id.tvWordCount)
+    @BindView(R.id.tvWordCount)
     TextView mTvWordCount;
-    @Bind(R.id.tvLatelyUpdate)
+    @BindView(R.id.tvLatelyUpdate)
     TextView mTvLatelyUpdate;
-    @Bind(R.id.btnRead)
+    @BindView(R.id.btnRead)
     DrawableCenterButton mBtnRead;
-    @Bind(R.id.btnJoinCollection)
+    @BindView(R.id.btnJoinCollection)
     DrawableCenterButton mBtnJoinCollection;
-    @Bind(R.id.tvLatelyFollower)
+    @BindView(R.id.tvLatelyFollower)
     TextView mTvLatelyFollower;
-    @Bind(R.id.tvRetentionRatio)
+    @BindView(R.id.tvRetentionRatio)
     TextView mTvRetentionRatio;
-    @Bind(R.id.tvSerializeWordCount)
+    @BindView(R.id.tvSerializeWordCount)
     TextView mTvSerializeWordCount;
-    @Bind(R.id.tag_group)
+    @BindView(R.id.tag_group)
     TagGroup mTagGroup;
-    @Bind(R.id.tvlongIntro)
+    @BindView(R.id.tvlongIntro)
     TextView mTvlongIntro;
-    @Bind(R.id.tvMoreReview)
+    @BindView(R.id.tvMoreReview)
     TextView mTvMoreReview;
-    @Bind(R.id.rvHotReview)
+    @BindView(R.id.rvHotReview)
     RecyclerView mRvHotReview;
-    @Bind(R.id.rlCommunity)
+    @BindView(R.id.rlCommunity)
     RelativeLayout mRlCommunity;
-    @Bind(R.id.tvCommunity)
+    @BindView(R.id.tvCommunity)
     TextView mTvCommunity;
-    @Bind(R.id.tvHelpfulYes)
+    @BindView(R.id.tvHelpfulYes)
     TextView mTvPostCount;
-    @Bind(R.id.tvRecommendBookList)
+    @BindView(R.id.tvRecommendBookList)
     TextView mTvRecommendBookList;
 
-    @Bind(R.id.rvRecommendBoookList)
+    @BindView(R.id.rvRecommendBoookList)
     RecyclerView mRvRecommendBoookList;
 
     @Inject

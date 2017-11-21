@@ -29,8 +29,8 @@ import com.bumptech.glide.Glide;
 import com.justwayward.reader.R;
 import com.justwayward.reader.base.BaseRVActivity;
 import com.justwayward.reader.base.Constant;
-import com.justwayward.reader.bean.CommentList;
 import com.justwayward.reader.bean.BookHelp;
+import com.justwayward.reader.bean.CommentList;
 import com.justwayward.reader.common.OnRvItemClickListener;
 import com.justwayward.reader.component.AppComponent;
 import com.justwayward.reader.component.DaggerCommunityComponent;
@@ -49,7 +49,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -84,21 +84,21 @@ public class BookHelpDetailActivity extends BaseRVActivity<CommentList.CommentsB
     }
 
     static class HeaderViewHolder {
-        @Bind(R.id.ivBookCover)
+        @BindView(R.id.ivBookCover)
         ImageView ivAvatar;
-        @Bind(R.id.tvBookTitle)
+        @BindView(R.id.tvBookTitle)
         TextView tvNickName;
-        @Bind(R.id.tvTime)
+        @BindView(R.id.tvTime)
         TextView tvTime;
-        @Bind(R.id.tvTitle)
+        @BindView(R.id.tvTitle)
         TextView tvTitle;
-        @Bind(R.id.tvContent)
+        @BindView(R.id.tvContent)
         BookContentTextView tvContent;
-        @Bind(R.id.tvBestComments)
+        @BindView(R.id.tvBestComments)
         TextView tvBestComments;
-        @Bind(R.id.rvBestComments)
+        @BindView(R.id.rvBestComments)
         RecyclerView rvBestComments;
-        @Bind(R.id.tvCommentCount)
+        @BindView(R.id.tvCommentCount)
         TextView tvCommentCount;
 
         public HeaderViewHolder(View view) {

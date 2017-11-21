@@ -52,7 +52,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -86,33 +86,33 @@ public class BookReviewDetailActivity extends BaseRVActivity<CommentList.Comment
     }
 
     static class HeaderViewHolder {
-        @Bind(R.id.ivAuthorAvatar)
+        @BindView(R.id.ivAuthorAvatar)
         ImageView ivAuthorAvatar;
-        @Bind(R.id.tvBookAuthor)
+        @BindView(R.id.tvBookAuthor)
         TextView tvBookAuthor;
-        @Bind(R.id.tvTime)
+        @BindView(R.id.tvTime)
         TextView tvTime;
-        @Bind(R.id.tvTitle)
+        @BindView(R.id.tvTitle)
         TextView tvTitle;
-        @Bind(R.id.tvContent)
+        @BindView(R.id.tvContent)
         BookContentTextView tvContent;
-        @Bind(R.id.rlBookInfo)
+        @BindView(R.id.rlBookInfo)
         RelativeLayout rlBookInfo;
-        @Bind(R.id.ivBookCover)
+        @BindView(R.id.ivBookCover)
         ImageView ivBookCover;
-        @Bind(R.id.tvBookTitle)
+        @BindView(R.id.tvBookTitle)
         TextView tvBookTitle;
-        @Bind(R.id.tvHelpfullYesCount)
+        @BindView(R.id.tvHelpfullYesCount)
         TextView tvHelpfullYesCount;
-        @Bind(R.id.tvHelpfullNoCount)
+        @BindView(R.id.tvHelpfullNoCount)
         TextView tvHelpfullNoCount;
-        @Bind(R.id.tvBestComments)
+        @BindView(R.id.tvBestComments)
         TextView tvBestComments;
-        @Bind(R.id.rvBestComments)
+        @BindView(R.id.rvBestComments)
         RecyclerView rvBestComments;
-        @Bind(R.id.tvCommentCount)
+        @BindView(R.id.tvCommentCount)
         TextView tvCommentCount;
-        @Bind(R.id.rating)
+        @BindView(R.id.rating)
         XLHRatingBar ratingBar;
 
         public HeaderViewHolder(View view) {

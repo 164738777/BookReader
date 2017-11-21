@@ -23,12 +23,12 @@ import android.widget.TextView;
 
 import com.justwayward.reader.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @Bind(R.id.tvSkip)
+    @BindView(R.id.tvSkip)
     TextView tvSkip;
 
     private boolean flag = false;
@@ -70,6 +70,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onDestroy();
         flag = true;
         tvSkip.removeCallbacks(runnable);
-        ButterKnife.unbind(this);
+        // TODO: 2017/11/22 暂时移除.
+//        ButterKnife.unbind(this);
     }
 }
