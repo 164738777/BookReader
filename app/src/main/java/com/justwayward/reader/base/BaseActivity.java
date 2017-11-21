@@ -101,7 +101,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+        // TODO: 2017/11/22 暂时移除.
+//        ButterKnife.unbind(this);
         dismissDialog();
     }
 
