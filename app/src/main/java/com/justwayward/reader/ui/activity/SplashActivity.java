@@ -70,7 +70,5 @@ public class SplashActivity extends AppCompatActivity {
         super.onDestroy();
         flag = true;
         tvSkip.removeCallbacks(runnable);
-        // TODO: 2017/11/22 暂时移除.
-//        ButterKnife.unbind(this);
     }
 }

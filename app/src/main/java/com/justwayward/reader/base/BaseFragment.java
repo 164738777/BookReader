@@ -40,9 +40,7 @@ public abstract class BaseFragment extends Fragment {
 
     private CustomDialog dialog;
 
-    public abstract
-    @LayoutRes
-    int getLayoutResId();
+    public abstract @LayoutRes int getLayoutResId();
 
     protected abstract void setupActivityComponent(AppComponent appComponent);
 
@@ -115,8 +113,9 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void hideDialog() {
-        if (dialog != null)
+        if (dialog != null) {
             dialog.hide();
+        }
     }
 
     public void showDialog() {

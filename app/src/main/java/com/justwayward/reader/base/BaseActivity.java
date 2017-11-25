@@ -45,7 +45,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected int statusBarColor = 0;
     protected View statusBarView = null;
     private boolean mNowMode;
-    private CustomDialog dialog;//进度条
+    // 进度条
+    private CustomDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         ButterKnife.bind(this);
         setupActivityComponent(ReaderApplication.getsInstance().getAppComponent());
-        mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
+        mCommonToolbar = findViewById(R.id.common_toolbar);
         if (mCommonToolbar != null) {
             initToolBar();
             setSupportActionBar(mCommonToolbar);
@@ -101,8 +102,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // TODO: 2017/11/22 暂时移除.
-//        ButterKnife.unbind(this);
         dismissDialog();
     }
 

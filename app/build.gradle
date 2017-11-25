@@ -83,4 +83,6 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 
+    // permission
+    implementation 'com.karumi:dexter:4.2.0'
 }
