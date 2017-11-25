@@ -15,6 +15,7 @@
  */
 package com.justwayward.reader.ui.activity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -35,6 +36,8 @@ import com.justwayward.reader.manager.EventManager;
 import com.justwayward.reader.ui.easyadapter.RecommendAdapter;
 import com.justwayward.reader.utils.AppUtils;
 import com.justwayward.reader.utils.FileUtils;
+import com.justwayward.reader.utils.RuntimePermissionUtil;
+import com.justwayward.reader.utils.ToastUtils;
 import com.justwayward.reader.view.recyclerview.EasyRecyclerView;
 import com.justwayward.reader.view.recyclerview.adapter.RecyclerArrayAdapter;
 
@@ -90,10 +93,23 @@ public class ScanLocalBookActivity extends BaseActivity implements RecyclerArray
         mAdapter.setOnItemClickListener(this);
         mRecyclerView.setAdapterWithProgress(mAdapter);
 
-        queryFiles();
+        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
+        RuntimePermissionUtil.checkPermission(this, permissions,
+                new RuntimePermissionUtil.OnRequestPermissionListener() {
+            @Override
+            public void onRequestSuccess() {
+                queryFiles();
+            }
+
+            @Override
+            public void onRequestError() {
+                ToastUtils.showSingleToast("权限获取失败");
+            }
+        });
     }
 
     private void queryFiles() {
+        // FIXME: 2017/11/25 0b 的文件不要添加入list
         String[] projection = new String[]{MediaStore.Files.FileColumns._ID,
                 MediaStore.Files.FileColumns.DATA,
                 MediaStore.Files.FileColumns.SIZE
@@ -129,8 +145,9 @@ public class ScanLocalBookActivity extends BaseActivity implements RecyclerArray
 
                 int dot = path.lastIndexOf("/");
                 String name = path.substring(dot + 1);
-                if (name.lastIndexOf(".") > 0)
+                if (name.lastIndexOf(".") > 0) {
                     name = name.substring(0, name.lastIndexOf("."));
+                }
 
                 Recommend.RecommendBooks books = new Recommend.RecommendBooks();
                 books._id = name;

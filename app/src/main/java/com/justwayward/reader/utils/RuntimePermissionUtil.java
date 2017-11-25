@@ -34,7 +34,8 @@ public class RuntimePermissionUtil {
                             listener.onRequestError();
                         }
                     }
-                });
+                })
+                .check();
     }
 
     public interface OnRequestPermissionListener {
