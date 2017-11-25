@@ -13,7 +13,8 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rlReadMark"
     android:layout_width="match_parent"
     android:layout_height="190dp"
@@ -38,7 +39,7 @@
             android:gravity="center_vertical"
             android:padding="5dp"
             android:text="@string/add_bookmark"
-            android:textColor="@color/book_read_bottom_text" />
+            android:textColor="@color/book_read_bottom_text"/>
 
         <TextView
             android:id="@+id/tvClear"
@@ -51,7 +52,7 @@
             android:gravity="center_vertical"
             android:padding="5dp"
             android:text="@string/clear_bookmark"
-            android:textColor="@color/book_read_bottom_text" />
+            android:textColor="@color/book_read_bottom_text"/>
 
     </RelativeLayout>
 
@@ -61,5 +62,5 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:divider="@color/light_red" />
+        android:divider="@color/light_red"/>
 </LinearLayout>

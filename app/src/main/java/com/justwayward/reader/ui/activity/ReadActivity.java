@@ -424,6 +424,9 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
                 break;
             case 2:
                 mPageWidget = new NoAimWidget(this, bookId, mChapterList, new ReadListener());
+                break;
+            default:
+                break;
         }
 
         registerReceiver(receiver, intentFilter);

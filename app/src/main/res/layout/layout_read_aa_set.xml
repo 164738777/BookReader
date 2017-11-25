@@ -13,7 +13,8 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rlReadAaSet"
     android:layout_width="match_parent"
     android:layout_height="190dp"
@@ -38,7 +39,7 @@
             android:layout_height="55dp"
             android:padding="5dp"
             android:scaleType="center"
-            android:src="@drawable/ic_brightness_minus" />
+            android:src="@drawable/ic_brightness_minus"/>
 
         <SeekBar
             android:id="@+id/seekbarLightness"
@@ -52,7 +53,7 @@
             android:minHeight="3dp"
             android:progressDrawable="@drawable/seekbar_bg"
             android:thumb="@drawable/seekbar_thumb"
-            android:thumbOffset="10dp" />
+            android:thumbOffset="10dp"/>
 
         <ImageView
             android:id="@+id/ivBrightnessPlus"
@@ -60,7 +61,7 @@
             android:layout_height="55dp"
             android:padding="5dp"
             android:scaleType="center"
-            android:src="@drawable/ic_brightness_add" />
+            android:src="@drawable/ic_brightness_add"/>
     </LinearLayout>
 
     <LinearLayout
@@ -79,7 +80,7 @@
             android:padding="5dp"
             android:text="Aa-"
             android:textColor="@color/common_h2"
-            android:textSize="14dp" />
+            android:textSize="14dp"/>
 
         <SeekBar
             android:id="@+id/seekbarFontSize"
@@ -93,7 +94,7 @@
             android:minHeight="3dp"
             android:progressDrawable="@drawable/seekbar_bg"
             android:thumb="@drawable/seekbar_thumb"
-            android:thumbOffset="10dp" />
+            android:thumbOffset="10dp"/>
 
         <TextView
             android:id="@+id/tvFontsizePlus"
@@ -103,7 +104,7 @@
             android:padding="5dp"
             android:text="Aa+"
             android:textColor="@color/common_h2"
-            android:textSize="14dp" />
+            android:textSize="14dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -120,7 +121,7 @@
             android:button="@drawable/volume_checkbox_selector"
             android:text="音量键翻页"
             android:textColor="@color/common_h3"
-            android:textSize="14dp" />
+            android:textSize="14dp"/>
 
         <CheckBox
             android:id="@+id/cbAutoBrightness"
@@ -130,7 +131,7 @@
             android:button="@drawable/volume_checkbox_selector"
             android:text="自动调整亮度"
             android:textColor="@color/common_h3"
-            android:textSize="14dp" />
+            android:textSize="14dp"/>
 
     </LinearLayout>
 
@@ -144,5 +145,5 @@
         android:layout_marginTop="10dp"
         android:listSelector="@android:color/transparent"
         android:numColumns="6"
-        android:scrollbars="none" />
+        android:scrollbars="none"/>
 </LinearLayout>

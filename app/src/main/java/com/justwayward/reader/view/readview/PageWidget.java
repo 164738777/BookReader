@@ -105,14 +105,18 @@ public class PageWidget extends BaseReadView {
      */
     @Override
     public void calcCornerXY(float x, float y) {
-        if (x <= mScreenWidth / 2)
+        if (x <= mScreenWidth / 2) {
             mCornerX = 0;
-        else
+        } else {
             mCornerX = mScreenWidth;
-        if (y <= mScreenHeight / 2)
+        }
+
+        if (y <= mScreenHeight / 2) {
             mCornerY = 0;
-        else
+        } else {
             mCornerY = mScreenHeight;
+        }
+
         mIsRTandLB = (mCornerX == 0 && mCornerY == mScreenHeight)
                 || (mCornerX == mScreenWidth && mCornerY == 0);
     }
@@ -154,8 +158,9 @@ public class PageWidget extends BaseReadView {
         // 如果继续翻页，会出现BUG故在此限制
         if (mTouch.x > 0 && mTouch.x < mScreenWidth) {
             if (mBezierStart1.x < 0 || mBezierStart1.x > mScreenWidth) {
-                if (mBezierStart1.x < 0)
+                if (mBezierStart1.x < 0) {
                     mBezierStart1.x = mScreenWidth - mBezierStart1.x;
+                }
 
                 float f1 = Math.abs(mCornerX - mTouch.x);
                 float f2 = mScreenWidth * f1 / mBezierStart1.x;
@@ -237,7 +242,8 @@ public class PageWidget extends BaseReadView {
         int leftx;
         int rightx;
         GradientDrawable mBackShadowDrawable;
-        if (mIsRTandLB) {  //左下及右上
+        if (mIsRTandLB) {
+            //左下及右上
             leftx = (int) (mBezierStart1.x);
             rightx = (int) (mBezierStart1.x + mTouchToCornerDis / 4);
             mBackShadowDrawable = mBackShadowDrawableLR;
