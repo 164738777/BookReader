@@ -16,7 +16,7 @@ import com.karumi.dexter.listener.multi.BaseMultiplePermissionsListener;
 
 public class RuntimePermissionUtil {
 
-    public static void checkPermission(Activity activity, final OnRequestPermissionListener listener, String... permissions) {
+    public static void checkPermission(Activity activity, String[] permissions, final OnRequestPermissionListener listener) {
         Dexter.withActivity(activity)
                 .withPermissions(permissions)
                 .withListener(new BaseMultiplePermissionsListener() {
@@ -37,7 +37,7 @@ public class RuntimePermissionUtil {
                 });
     }
 
-    interface OnRequestPermissionListener {
+    public interface OnRequestPermissionListener {
         void onRequestSuccess();
 
         void onRequestError();

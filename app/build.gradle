@@ -85,4 +85,7 @@ dependencies {
 
     // permission
     implementation 'com.karumi:dexter:4.2.0'
+
+    //bugly
+    implementation 'com.tencent.bugly:crashreport:latest.release'
 }

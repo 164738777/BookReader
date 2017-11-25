@@ -34,6 +34,7 @@ import com.sinovoice.hcicloudsdk.common.HciErrorCode;
 import com.sinovoice.hcicloudsdk.common.InitParam;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * @author yuyh.
@@ -62,6 +63,7 @@ public class ReaderApplication extends Application {
         initPrefs();
         initNightMode();
         //initHciCloud();
+        initBugly();
     }
 
     public static ReaderApplication getsInstance() {
@@ -116,5 +118,10 @@ public class ReaderApplication extends Application {
             return;
         }
         LogUtils.e("HciCloud初始化成功");
+    }
+
+
+    private void initBugly() {
+        CrashReport.initCrashReport(getApplicationContext(), "abbf520b88", BuildConfig.DEBUG);
     }
 }

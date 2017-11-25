@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# bugly
+# https://bugly.qq.com/docs/user-guide/instruction-manual-android/?v=20171123163535#_2
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
