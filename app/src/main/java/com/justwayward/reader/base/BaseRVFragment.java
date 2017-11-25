@@ -53,8 +53,9 @@ public abstract class BaseRVFragment<T1 extends BaseContract.BasePresenter, T2> 
      */
     @Override
     public void attachView() {
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.attachView(this);
+        }
     }
 
     protected void initAdapter(boolean refreshable, boolean loadmoreable) {
@@ -110,7 +111,8 @@ public abstract class BaseRVFragment<T1 extends BaseContract.BasePresenter, T2> 
     }
 
     protected void loaddingError() {
-        if (mAdapter.getCount() < 1) { // 说明缓存也没有加载，那就显示errorview，如果有缓存，即使刷新失败也不显示error
+        // 说明缓存也没有加载，那就显示errorview，如果有缓存，即使刷新失败也不显示error
+        if (mAdapter.getCount() < 1) {
             mAdapter.clear();
         }
         mAdapter.pauseMore();
@@ -121,7 +123,8 @@ public abstract class BaseRVFragment<T1 extends BaseContract.BasePresenter, T2> 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.detachView();
+        }
     }
 }

@@ -109,7 +109,9 @@ import rx.Observable;
 import rx.functions.Action1;
 
 /**
+ * 阅读界面
  * Created by lfh on 2016/9/18.
+ * FIXME 内存泄漏 16 Mb.
  */
 public class ReadActivity extends BaseActivity implements BookReadContract.View {
 

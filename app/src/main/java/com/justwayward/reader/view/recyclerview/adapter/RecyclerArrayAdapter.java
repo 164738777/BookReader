@@ -64,6 +64,8 @@ import java.util.List;
  * <p>To use something other than TextViews for the array display, for instance, ImageViews,
  * or to have some of data besides toString() results fill the views,
  */
+
+// https://github.com/Jude95/EasyRecyclerView
 abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * Contains the list of objects that represent the data of this ArrayAdapter.
