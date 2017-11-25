@@ -77,8 +77,9 @@ public class BookApi {
     }
 
     public static BookApi getInstance(OkHttpClient okHttpClient) {
-        if (instance == null)
+        if (instance == null) {
             instance = new BookApi(okHttpClient);
+        }
         return instance;
     }
 

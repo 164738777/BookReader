@@ -14,12 +14,13 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/common_bg"
     android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp">
+    android:layout_marginRight="30dp"
+    android:background="@color/common_bg">
 
     <ImageView
         android:id="@+id/mIvClose"
@@ -29,7 +30,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:background="@drawable/ugcbook_delete" />
+        android:background="@drawable/ugcbook_delete"/>
 
     <ImageView
         android:id="@+id/mIvGender"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/mIvClose"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/ic_gender_logo" />
+        android:background="@drawable/ic_gender_logo"/>
 
     <TextView
         android:id="@+id/mTvContent"
@@ -48,7 +49,7 @@
         android:gravity="center"
         android:text="我们会根据您的喜好\n推荐相对应的小说"
         android:textColor="@color/common_h2"
-        android:textSize="11dp" />
+        android:textSize="11dp"/>
 
     <TextView
         android:id="@+id/mTvSelect"
@@ -60,7 +61,7 @@
         android:gravity="center"
         android:text="-请选择您的喜好-"
         android:textColor="@color/common_h2"
-        android:textSize="11dp" />
+        android:textSize="11dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,9 +75,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/bg_male_button_selector"
             android:text="男生小说"
-            android:textColor="@android:color/white"
-            android:background="@drawable/bg_male_button_selector"/>
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/mBtnFemale"
@@ -84,8 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_weight="1"
+            android:background="@drawable/bg_female_button_selector"
             android:text="女生小说"
-            android:textColor="@android:color/white"
-            android:background="@drawable/bg_female_button_selector"/>
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 </RelativeLayout>

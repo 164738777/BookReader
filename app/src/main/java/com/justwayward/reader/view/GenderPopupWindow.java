@@ -36,6 +36,7 @@ import org.greenrobot.eventbus.EventBus;
 /**
  * Created by xiaoshu on 2016/10/9.
  * 性别选择弹窗 用户没有选择性别则进入app提示
+ * TODO 用束缚布局优化
  */
 public class GenderPopupWindow extends PopupWindow {
     private View mContentView;
@@ -66,7 +67,7 @@ public class GenderPopupWindow extends PopupWindow {
                 EventBus.getDefault().post(new UserSexChooseFinishedEvent());
             }
         });
-        mBtnMale = (Button) mContentView.findViewById(R.id.mBtnMale);
+        mBtnMale = mContentView.findViewById(R.id.mBtnMale);
         mBtnMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +75,7 @@ public class GenderPopupWindow extends PopupWindow {
                 dismiss();
             }
         });
-        mBtnFemale = (Button) mContentView.findViewById(R.id.mBtnFemale);
+        mBtnFemale = mContentView.findViewById(R.id.mBtnFemale);
         mBtnFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +83,7 @@ public class GenderPopupWindow extends PopupWindow {
                 dismiss();
             }
         });
-        mIvClose = (ImageView) mContentView.findViewById(R.id.mIvClose);
+        mIvClose = mContentView.findViewById(R.id.mIvClose);
         mIvClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

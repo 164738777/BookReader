@@ -31,8 +31,10 @@ import android.widget.PopupWindow;
 import com.justwayward.reader.R;
 
 /**
+ * 第三方登录PopupWindow
  * @author yuyh.
  * @date 16/9/5.
+ * TODO 用束缚布局优化
  */
 public class LoginPopupWindow extends PopupWindow implements View.OnTouchListener {
 
@@ -54,9 +56,9 @@ public class LoginPopupWindow extends PopupWindow implements View.OnTouchListene
         mContentView = LayoutInflater.from(activity).inflate(R.layout.layout_login_popup_window, null);
         setContentView(mContentView);
 
-        qq = (ImageView) mContentView.findViewById(R.id.ivQQ);
-        weibo = (ImageView) mContentView.findViewById(R.id.ivWeibo);
-        wechat = (ImageView) mContentView.findViewById(R.id.ivWechat);
+        qq = mContentView.findViewById(R.id.ivQQ);
+        weibo = mContentView.findViewById(R.id.ivWeibo);
+        wechat = mContentView.findViewById(R.id.ivWechat);
 
         qq.setOnTouchListener(this);
         weibo.setOnTouchListener(this);

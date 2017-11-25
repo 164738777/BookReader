@@ -14,7 +14,8 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/transparent"
@@ -31,34 +32,34 @@
             android:id="@+id/ivQQ"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
             android:layout_weight="1"
             android:clickable="true"
             android:gravity="center"
-            android:src="@drawable/login_qq" />
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/login_qq"/>
 
         <ImageView
             android:id="@+id/ivWeibo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
             android:layout_weight="1"
             android:clickable="true"
             android:gravity="center"
-            android:src="@drawable/login_weibo" />
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/login_weibo"/>
 
         <ImageView
             android:id="@+id/ivWechat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
             android:layout_weight="1"
             android:clickable="true"
             android:gravity="center"
-            android:src="@drawable/login_wechat" />
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/login_wechat"/>
     </LinearLayout>
 
     <LinearLayout
@@ -74,7 +75,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="QQ"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
 
         <TextView
             android:layout_width="0dp"
@@ -84,7 +85,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="微博"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
 
         <TextView
             android:layout_width="0dp"
@@ -94,7 +95,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="微信"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 

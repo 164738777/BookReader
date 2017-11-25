@@ -37,6 +37,9 @@ import com.justwayward.reader.view.loadding.CustomDialog;
 
 import butterknife.ButterKnife;
 
+/**
+ * Dialog, statusBar, ToolBar
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     public Toolbar mCommonToolbar;
@@ -52,22 +55,30 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+
+        // TODO: 2017/11/25 用StatusBarUtils整合statusBar代码.
         if (statusBarColor == 0) {
             statusBarView = StatusBarCompat.compat(this, ContextCompat.getColor(this, R.color.colorPrimaryDark));
         } else if (statusBarColor != -1) {
             statusBarView = StatusBarCompat.compat(this, statusBarColor);
         }
         transparent19and20();
+
         mContext = this;
         ButterKnife.bind(this);
+
         setupActivityComponent(ReaderApplication.getsInstance().getAppComponent());
+
+        // Set toolBar.
         mCommonToolbar = findViewById(R.id.common_toolbar);
         if (mCommonToolbar != null) {
             initToolBar();
             setSupportActionBar(mCommonToolbar);
         }
+
         initDatas();
         configViews();
+
         mNowMode = SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT);
     }
 
@@ -89,6 +100,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // 每次重进Aty都会重新设置DayNight模式
         if (SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT, false) != mNowMode) {
             if (SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT, false)) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -153,8 +166,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void hideDialog() {
-        if (dialog != null)
+        if (dialog != null) {
             dialog.hide();
+        }
     }
 
     public void showDialog() {

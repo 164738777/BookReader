@@ -43,7 +43,8 @@ import java.util.List;
 
 
 /**
- * Created by Administrator on 2016/8/4.
+ * https://github.com/RuffianZhong/RVPIndicator
+ * TODO 换成动态库形式
  */
 public class RVPIndicator extends LinearLayout {
 

@@ -83,6 +83,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, Log
 
     @BindView(R.id.indicator)
     RVPIndicator mIndicator;
+
     @BindView(R.id.viewpager)
     ViewPager mViewPager;
 
