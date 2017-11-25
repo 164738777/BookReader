@@ -103,7 +103,7 @@ public class ScanLocalBookActivity extends BaseActivity implements RecyclerArray
 
             @Override
             public void onRequestError() {
-                ToastUtils.showSingleToast("权限获取失败");
+                ToastUtils.showSingleToast(R.string.toast_text_permissions_denied);
             }
         });
     }

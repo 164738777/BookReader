@@ -17,6 +17,7 @@ import com.karumi.dexter.listener.multi.BaseMultiplePermissionsListener;
 public class RuntimePermissionUtil {
 
     public static void checkPermission(Activity activity, String[] permissions, final OnRequestPermissionListener listener) {
+        // FIXME memory leak. Dexter instance.
         Dexter.withActivity(activity)
                 .withPermissions(permissions)
                 .withListener(new BaseMultiplePermissionsListener() {

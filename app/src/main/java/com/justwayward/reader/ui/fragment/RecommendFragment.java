@@ -154,16 +154,18 @@ public class RecommendFragment extends BaseRVFragment<RecommendPresenter, Recomm
 
     @Override
     public void onItemClick(int position) {
-        if (isVisible(llBatchManagement)) //批量管理时，屏蔽点击事件
-            return;
-        ReadActivity.startActivity(activity, mAdapter.getItem(position), mAdapter.getItem(position).isFromSD);
+        // 批量管理时，屏蔽点击事件
+        if (!isVisible(llBatchManagement)) {
+            ReadActivity.startActivity(activity, mAdapter.getItem(position), mAdapter.getItem(position).isFromSD);
+        }
     }
 
     @Override
     public boolean onItemLongClick(int position) {
-        //批量管理时，屏蔽长按事件
-        if (isVisible(llBatchManagement)) return false;
-        showLongClickDialog(position);
+        // 批量管理时，屏蔽长按事件
+        if (!isVisible(llBatchManagement)) {
+            showLongClickDialog(position);
+        }
         return false;
     }
 

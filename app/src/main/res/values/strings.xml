@@ -126,4 +126,6 @@
     <string name="cancle_top">取消置顶</string>
     <string name="to_add">去添加</string>
 
+    <!--常用-->
+    <string name="toast_text_permissions_denied">权限获取失败</string>
 </resources>

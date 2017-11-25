@@ -15,6 +15,7 @@
  */
 package com.justwayward.reader.utils;
 
+import android.Manifest;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +25,8 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.justwayward.reader.R;
 
 import java.lang.reflect.Field;
 
@@ -227,10 +230,21 @@ public class ScreenUtils {
      *
      * @param activity
      */
-    public static void stopAutoBrightness(Activity activity) {
-        Settings.System.putInt(activity.getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+    public static void stopAutoBrightness(final Activity activity) {
+        String[] permissions = {Manifest.permission.WRITE_SETTINGS};
+        RuntimePermissionUtil.checkPermission(activity, permissions, new RuntimePermissionUtil.OnRequestPermissionListener() {
+            @Override
+            public void onRequestSuccess() {
+                Settings.System.putInt(activity.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS_MODE,
+                        Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+            }
+
+            @Override
+            public void onRequestError() {
+                ToastUtils.showSingleToast(R.string.toast_text_permissions_denied);
+            }
+        });
     }
 
     /**
@@ -239,11 +253,21 @@ public class ScreenUtils {
      * @param activity
      */
 
-    public static void startAutoBrightness(Activity activity) {
-        Settings.System.putInt(activity.getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+    public static void startAutoBrightness(final Activity activity) {
+        String[] permissions = {Manifest.permission.WRITE_SETTINGS};
+        RuntimePermissionUtil.checkPermission(activity, permissions, new RuntimePermissionUtil.OnRequestPermissionListener() {
+            @Override
+            public void onRequestSuccess() {
+                Settings.System.putInt(activity.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS_MODE,
+                        Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+            }
 
+            @Override
+            public void onRequestError() {
+                ToastUtils.showSingleToast(R.string.toast_text_permissions_denied);
+            }
+        });
     }
 
     /**
