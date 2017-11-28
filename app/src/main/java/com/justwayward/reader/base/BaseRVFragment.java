@@ -60,6 +60,7 @@ public abstract class BaseRVFragment<T1 extends BaseContract.BasePresenter, T2> 
 
     protected void initAdapter(boolean refreshable, boolean loadmoreable) {
         if (mRecyclerView != null) {
+            // TODO: 2017/11/25 日后可以灵活处理(例如可以换成GridLayoutManager)。
             mRecyclerView.setLayoutManager(new LinearLayoutManager(getSupportActivity()));
             mRecyclerView.setItemDecoration(ContextCompat.getColor(activity, R.color.common_divider_narrow), 1, 0, 0);
             mRecyclerView.setAdapterWithProgress(mAdapter);

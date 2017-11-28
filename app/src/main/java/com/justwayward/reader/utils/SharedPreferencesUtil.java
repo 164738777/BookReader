@@ -170,9 +170,7 @@ public class SharedPreferencesUtil {
             e.printStackTrace();
         } finally {
             try {
-                if (baos != null) {
-                    baos.close();
-                }
+                baos.close();
                 if (out != null) {
                     out.close();
                 }

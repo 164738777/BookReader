@@ -239,6 +239,7 @@ public class PageFactory {
                         mHeight - marginHeight - ScreenUtils.dpToPxInt(12), mTitlePaint);
             }
 
+            // FIXME 不能通过章节来设置百分比，正确做法应该是通过 第一个字/总字数。
             float percent = (float) currentChapter * 100 / chapterSize;
             canvas.drawText(decimalFormat.format(percent) + "%", (mWidth - percentLen) / 2,
                     mHeight - marginHeight, mTitlePaint);
